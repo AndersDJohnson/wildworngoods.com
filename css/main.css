@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  /* font-family: sans-serif; */
+  font-family: cursive;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+body {
+  height: 100%;
+  background: #7a7a7a;
+}
+
+#bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-image: url("../img/00100lPORTRAIT_00100_BURST20181209133834284_COVER-opt.jpg");
+  background-position: center bottom;
+}
+
+#fg {
+  position: relative;
+
+  color: white;
+
+  text-align: center;
+}
+
+#fg a {
+  position: relative;
+
+  color: white;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
+
+#logo {
+  min-width: 200px;
+  width: 30%;
+}
+
+header {
+  padding-top: 1em;
+}
+
+nav a {
+  display: block;
+  margin: .8em 0;
+  font-size: 1.8em;
+  text-shadow: 0px 0px 10px black;
+  text-decoration: none;
+}
