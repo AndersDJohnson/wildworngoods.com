@@ -84,25 +84,43 @@ nav a i {
   min-width: 1.5em;
 }
 
-.shop {
-  margin: 40px 0;
-}
-
 .jewel {
-  background-image: url("../img/jewel.png");
+  background-image:
+          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
+          url("../img/jewel.png"),
+          radial-gradient(closest-side, black, rgba(0,0,0,0));
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 40px;
+  padding: 50px;
   text-decoration: none;
   color: white;
   text-shadow: 0px 0px 4px black;
-  display: block;
+  display: inline-block;
+  transition: transform 200ms ease-in-out;
 }
 
-.jewel {
+.jewel-2 {
+  background-image:
+          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
+          url("../img/jewel-2.png"),
+          radial-gradient(closest-side, black, rgba(0,0,0,0));
+  padding: 55px;
+  padding-right: 65px;
+}
 
+.jewel-3 {
+  background-image:
+          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
+          url("../img/jewel-3.png"),
+          radial-gradient(closest-side, black, rgba(0,0,0,0));
+  padding: 50px;
+  padding-bottom: 80px;
+}
+
+.jewel:hover, .jewel:active {
+  transform: scale(1.2);
 }
 
 .btn {
