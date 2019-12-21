@@ -1,7 +1,6 @@
 html {
   height: 100%;
-  /* font-family: sans-serif; */
-  font-family: cursive;
+    font-family: sans-serif;
   font-size: 16px;
 }
 
@@ -14,6 +13,10 @@ html {
 body {
   height: 100%;
   background: #7a7a7a;
+}
+
+.fancy {
+  font-family: cursive;
 }
 
 #bg {
@@ -33,12 +36,6 @@ body {
   color: white;
 
   text-align: center;
-}
-
-#fg a {
-  position: relative;
-
-  color: white;
 }
 
 .sr-only {
@@ -61,18 +58,23 @@ body {
 }
 
 header {
-  padding-top: 1em;
+  margin-top: 40px;
 }
 
 h2 {
-  text-shadow: 0px 0px 10px black;
-  font-size: 1.8em;
+  text-shadow: 0 0 2px black;
+  font-size: 40px;
 }
 
-.body a {
-  display: block;
-  margin: .5em 0;
-  font-size: 1.5em;
+nav {
+  margin: 40px 0;
+}
+
+nav a {
+  position: relative;
+  color: white;
+  margin: 20px 0;
+  font-size: 40px;
   text-shadow: 0px 0px 10px black;
   text-decoration: none;
 }
@@ -80,4 +82,81 @@ h2 {
 nav a i {
   display: inline-block;
   min-width: 1.5em;
+}
+
+.shop {
+  margin: 40px 0;
+}
+
+.jewel {
+  background-image: url("../img/jewel.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 40px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 0px 4px black;
+  display: block;
+}
+
+.jewel {
+
+}
+
+.btn {
+  /*--border-bright:  #00c1c1;*/
+  /*--border-dark: #004040;*/
+  --border-bright:  #aaa;
+  --border-dark: #666;
+  background-size: cover;
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 6px;
+  border-top-color: var(--border-bright);
+  border-left-color: var(--border-bright);
+  border-right-color: var(--border-dark);
+  border-bottom-color: var(--border-dark);
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  background-position: 0 0;
+  transition: background-position 1s ease-in-out;
+}
+
+.btn-shop {
+  background-image: linear-gradient(100deg, #004040, #00c1c1);
+  background-image: url('../img/stone.png');
+}
+
+.btn-etsy {
+  background-image: linear-gradient(100deg, #004040, #00c1c1);
+  background-image: url('../img/stone-2.png');
+}
+
+.btn-insta {
+  background-image: linear-gradient(100deg, #004040, #00c1c1);
+  background-image: url('../img/stone-2.png');
+}
+
+.btn-fb {
+  background-image: linear-gradient(100deg, #004040, #00c1c1);
+  background-image: url('../img/stone-2.png');
+}
+
+.btn-shop:hover {
+  transform: scale(1.2);
+}
+
+.eml {
+  margin-top: 40px;
+}
+
+.eml a {
+  font-size: 24px;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  text-decoration: none;
 }
