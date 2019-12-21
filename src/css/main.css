@@ -93,7 +93,7 @@ nav a i {
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 50px;
+  padding: 55px;
   text-decoration: none;
   color: white;
   text-shadow: 0px 0px 4px black;
@@ -106,7 +106,7 @@ nav a i {
           radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
           url("../img/jewel-2.png"),
           radial-gradient(closest-side, black, rgba(0,0,0,0));
-  padding: 55px;
+  padding: 60px;
   padding-right: 65px;
 }
 
@@ -115,7 +115,7 @@ nav a i {
           radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
           url("../img/jewel-3.png"),
           radial-gradient(closest-side, black, rgba(0,0,0,0));
-  padding: 50px;
+  padding: 60px;
   padding-bottom: 80px;
 }
 
