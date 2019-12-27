@@ -18,7 +18,7 @@
     "url": "https://github.com/AndersDJohnson/wildworngoods.com/issues"
   },
   "homepage": "https://github.com/AndersDJohnson/wildworngoods.com#readme",
-  "dependencies": {
+  "devDependencies": {
     "gh-pages": "^2.0.1"
   }
 }
