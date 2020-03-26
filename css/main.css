@@ -28,6 +28,7 @@ body {
   background-size: cover;
   background-image: url("../img/00100lPORTRAIT_00100_BURST20181209133834284_COVER-opt.jpg");
   background-position: center bottom;
+  filter: blur(3px);
 }
 
 #fg {
@@ -55,6 +56,7 @@ body {
 #logo {
   min-width: 200px;
   width: 25%;
+  filter: drop-shadow(4px 4px 12px black);
 }
 
 header {
@@ -63,17 +65,18 @@ header {
 
 h2 {
   text-shadow: 0 0 2px black;
+  filter: drop-shadow(4px 4px 12px black);
+
   font-size: 40px;
 }
 
 .jewel {
-  background-image:
-          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
-          url("../img/jewel.png"),
-          radial-gradient(closest-side, black, rgba(0,0,0,0));
+  background-image: url("../img/jewel.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
+  filter: drop-shadow(4px 4px 12px black);
 
   padding: 55px;
   text-decoration: none;
@@ -83,30 +86,28 @@ h2 {
   transition: transform 200ms ease-in-out;
 }
 
+.jewel .text {
+  filter: drop-shadow(0 0 6px black);
+}
+
 a.jewel {
   font-size: 24px;
 }
 
 .jewel-2 {
-  background-image:
-          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
-          url("../img/jewel-2.png"),
-          radial-gradient(closest-side, black, rgba(0,0,0,0));
+  background-image: url("../img/jewel-2.png");
   padding: 60px;
   padding-right: 65px;
 }
 
 .jewel-3 {
-  background-image:
-          radial-gradient(farthest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 80%),
-          url("../img/jewel-3.png"),
-          radial-gradient(closest-side, black, rgba(0,0,0,0));
+  background-image: url("../img/jewel-3.png");
   padding: 60px;
   padding-bottom: 80px;
 }
 
 .jewel:hover, .jewel:active {
-  transform: scale(1.2);
+  transform: scale(1.2) rotateZ(-4deg);
 }
 
 .eml {
@@ -117,5 +118,6 @@ a.jewel {
   font-size: 24px;
   color: white;
   text-shadow: 0px 0px 10px black;
+  filter: drop-shadow(4px 4px 12px black);
   text-decoration: none;
 }
