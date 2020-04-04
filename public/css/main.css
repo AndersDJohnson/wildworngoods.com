@@ -10,11 +10,6 @@ html {
   }
 }
 
-body {
-  height: 100%;
-  background: red;
-}
-
 .fancy {
   font-family: cursive;
 }
@@ -25,6 +20,7 @@ body {
 }
 
 .bg-img {
+  filter: blur(1px);
   background-size: cover;
   position:fixed;
   top: 0;

@@ -1,13 +1,14 @@
-const fs = require('fs')
-const { makeKeyframes } = require('./slides')
+const fs = require("fs");
+const { makeKeyframes } = require("./slides");
 
-const publicDir = __dirname + '/../public'
+const publicDir = __dirname + "/../public";
 
-const slides = fs.readdirSync(publicDir + '/img/slides').reverse().slice(0, 3)
+const slides = fs
+  .readdirSync(publicDir + "/img/slides/opt")
+  .reverse()
+  .slice(0, 3);
 
-const keyframes = makeKeyframes(slides.length)
-
-console.log(keyframes)
+const keyframes = makeKeyframes(slides.length);
 
 const html = `
 <!doctype html>
@@ -74,10 +75,14 @@ const html = `
 
 <body>
   <div id="bg">
-    ${slides.map((slide, i) => `<div class="bg-img" style="
-      background-image: url('/img/slides/${slide}');
-      animation: slide-${i} ${slides.length}s ease-in-out infinite;
-    "></div>`).join('')}
+    ${slides
+      .map(
+        (slide, i) => `<div class="bg-img" style="
+      background-image: url('/img/slides/opt/${slide}');
+      animation: slide-${i} ${slides.length * 3}s ease-in-out infinite;
+    "></div>`
+      )
+      .join("")}
   </div>
 
   <div id="fg">
@@ -112,6 +117,6 @@ const html = `
 </body>
 
 </html>
-`
+`;
 
-fs.writeFileSync(publicDir + "/index.html", html)
+fs.writeFileSync(publicDir + "/index.html", html);

@@ -16,7 +16,7 @@ describe('makeKeyframePoints', () => {
             {fadeStart: .5, fullStart: .625, fullStop: 1, fadeStop: .125}
         ])
     })
-})
+});
 
 // 8 secs, 2 sec transition
 //     4s    |    4s
