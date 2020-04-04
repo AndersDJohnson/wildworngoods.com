@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d src",
+    "deploy": "gh-pages -d public",
+    "dev": "concurrently \"nodemon src\" \"live-server public\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,9 @@
   },
   "homepage": "https://github.com/AndersDJohnson/wildworngoods.com#readme",
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "concurrently": "^5.1.0",
+    "gh-pages": "^2.0.1",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.2"
   }
 }

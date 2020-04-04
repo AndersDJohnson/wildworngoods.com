@@ -1,3 +1,10 @@
+const fs = require('fs')
+
+const publicDir = __dirname + '/../public'
+
+const slides = fs.readdirSync(publicDir + '/img/slides').reverse()
+
+const html = `
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -49,37 +56,72 @@
   <meta property="og:image" content="https://wildworngoods.com/img/card.jpg">
   <meta property="og:description" content="Wild Worn: Jewelry hand-crafted with intention & love.">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <style>
+  ${slides.map((slide, i) => `
+    @keyframes slide${i} {
+      ${i < slides.length - 1 ? '' : `
+        0% {
+          opacity: .5;
+        }
+        ${1/slides.length * 100 / 4}% {
+          opacity: 0;
+        }
+      `}
+      ${i - .5 > 0 ? ((i - .5) / slides.length) * 100 : 0}% {
+        opacity: ${(i - .5) / slides.length < 0 ? .5 : 0 };
+      }
+      
+      ${((i + .5) / slides.length) * 100}% {
+        opacity: 1;
+      }
+      ${i < slides.length - 1 ? ((i + 1.5) / slides.length) * 100 : 100}% {
+        opacity: ${i < slides.length - 1 ? 0 : .5 };
+      }
+      ${i !== 0 ? '' : `
+        ${100 - (1/slides.length * 100)}% {
+          opacity: 0;
+        }
+        100% {
+          opacity: .5;
+        }
+      `}
+    }
+  `).join('\n')}
   </style>
 </head>
 
 <body>
-  <div id="bg"></div>
+  <div id="bg">
+    ${slides.map((slide, i) => `<div class="bg-img" style="
+      background-image: url('/img/slides/${slide}');
+      animation: slide${i} ${slides.length}s ease-in-out infinite;
+    "></div>`).join('')}
+  </div>
 
   <div id="fg">
     <header>
       <h1 class="sr-only">Wild Worn Goods</h1>
-      <img id="logo" alt="Wild Worn" src="img/logo-white.png">
+      <img id="logo" alt="Wild Worn" src="/img/logo-white.png">
 
       <h2 class="fancy">Jewelry hand-crafted with intention & love</h2>
     </header>
 
     <div class="body">
-        <a class="jewel jewel-2 fancy" href="https://www.etsy.com/shop/wildwornjewelry">
+        <a class="social fancy" href="https://www.etsy.com/shop/wildwornjewelry">
           <span class="text">Shop Etsy</span>
         </a>
 
-        <a class="jewel jewel fancy" href="https://www.instagram.com/wildwornjewelry/">
+        <a class="social fancy" href="https://www.instagram.com/wildwornjewelry/">
           <span class="text"><i class="fab fa-instagram"></i> Instagram</span>
         </a>
 
-        <a class="jewel jewel-3 fancy" href="https://www.facebook.com/wildwornjewelry/">
+        <a class="social fancy" href="https://www.facebook.com/wildwornjewelry/">
           <span class="text"><i class="fab fa-facebook-square"></i> Facebook</span>
         </a>
 
@@ -94,3 +136,6 @@
 </body>
 
 </html>
+`
+
+fs.writeFileSync(publicDir + "/index.html", html)

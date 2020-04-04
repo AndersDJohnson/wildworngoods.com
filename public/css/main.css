@@ -1,0 +1,103 @@
+html {
+  height: 100%;
+    font-family: sans-serif;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+body {
+  height: 100%;
+  background: black;
+}
+
+.fancy {
+  font-family: cursive;
+}
+
+#bg {
+}
+
+.bg-img {
+  background-size: cover;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#fg {
+  position: relative;
+
+  color: white;
+
+  text-align: center;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
+
+#logo {
+  min-width: 200px;
+  width: 25%;
+  filter: drop-shadow(4px 4px 12px #222);
+}
+
+header {
+  margin-top: 40px;
+}
+
+h2 {
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
+
+  font-size: 40px;
+}
+
+.social {
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
+  display: inline-block;
+  padding: 20px;
+}
+
+.social:hover, .social:active {
+  text-shadow: 0px 0px 10px white;
+  filter: drop-shadow(4px 4px 12px white);
+ }
+
+.eml {
+  margin: 40px 0;
+}
+
+.eml a {
+  font-size: 36px;
+  color: white;
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
+  text-decoration: none;
+}
+
+.eml a:hover, .eml a:active {
+  text-shadow: 0px 0px 10px white;
+  filter: drop-shadow(4px 4px 12px white);
+ }
