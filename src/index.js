@@ -3,7 +3,7 @@ const { makeKeyframes } = require('./slides')
 
 const publicDir = __dirname + '/../public'
 
-const slides = fs.readdirSync(publicDir + '/img/slides').reverse().slice(0, 2)
+const slides = fs.readdirSync(publicDir + '/img/slides').reverse().slice(0, 3)
 
 const keyframes = makeKeyframes(slides.length)
 
