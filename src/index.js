@@ -1,8 +1,13 @@
 const fs = require('fs')
+const { makeKeyframes } = require('./slides')
 
 const publicDir = __dirname + '/../public'
 
-const slides = fs.readdirSync(publicDir + '/img/slides').reverse()
+const slides = fs.readdirSync(publicDir + '/img/slides').reverse().slice(0, 2)
+
+const keyframes = makeKeyframes(slides.length)
+
+console.log(keyframes)
 
 const html = `
 <!doctype html>
@@ -63,36 +68,7 @@ const html = `
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <style>
-  ${slides.map((slide, i) => `
-    @keyframes slide${i} {
-      ${i < slides.length - 1 ? '' : `
-        0% {
-          opacity: .5;
-        }
-        ${1/slides.length * 100 / 4}% {
-          opacity: 0;
-        }
-      `}
-      ${i - .5 > 0 ? ((i - .5) / slides.length) * 100 : 0}% {
-        opacity: ${(i - .5) / slides.length < 0 ? .5 : 0 };
-      }
-      
-      ${((i + .5) / slides.length) * 100}% {
-        opacity: 1;
-      }
-      ${i < slides.length - 1 ? ((i + 1.5) / slides.length) * 100 : 100}% {
-        opacity: ${i < slides.length - 1 ? 0 : .5 };
-      }
-      ${i !== 0 ? '' : `
-        ${100 - (1/slides.length * 100)}% {
-          opacity: 0;
-        }
-        100% {
-          opacity: .5;
-        }
-      `}
-    }
-  `).join('\n')}
+    ${keyframes}
   </style>
 </head>
 
@@ -100,7 +76,7 @@ const html = `
   <div id="bg">
     ${slides.map((slide, i) => `<div class="bg-img" style="
       background-image: url('/img/slides/${slide}');
-      animation: slide${i} ${slides.length}s ease-in-out infinite;
+      animation: slide-${i} ${slides.length}s ease-in-out infinite;
     "></div>`).join('')}
   </div>
 

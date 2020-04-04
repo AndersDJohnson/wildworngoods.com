@@ -22,6 +22,7 @@
   "devDependencies": {
     "concurrently": "^5.1.0",
     "gh-pages": "^2.0.1",
+    "jest": "^25.2.7",
     "live-server": "^1.2.1",
     "nodemon": "^2.0.2"
   }
