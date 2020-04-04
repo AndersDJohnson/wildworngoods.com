@@ -1,6 +1,6 @@
 html {
   height: 100%;
-    font-family: sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 }
 
@@ -10,25 +10,24 @@ html {
   }
 }
 
-body {
-  height: 100%;
-  background: #b06c10;
-}
-
 .fancy {
   font-family: cursive;
 }
 
 #bg {
-  position: absolute;
+  position: relative;
+  z-index: -1;
+  background: black;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  background-size: cover;
-  background-image: url("../img/00100lPORTRAIT_00100_BURST20181209133834284_COVER-opt.jpg");
-  background-position: center bottom;
-  filter: blur(3px);
+  bottom: 0;
 }
 
 #fg {
@@ -40,23 +39,23 @@ body {
 }
 
 .sr-only {
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
-	-webkit-clip-path: inset(50%) !important;
-		clip-path: inset(50%) !important;  /* 2 */
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;            /* 3 */
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
 }
 
 #logo {
   min-width: 200px;
   width: 25%;
-  filter: drop-shadow(4px 4px 12px black);
+  filter: drop-shadow(4px 4px 12px #222);
 }
 
 header {
@@ -64,50 +63,26 @@ header {
 }
 
 h2 {
-  text-shadow: 0 0 2px black;
-  filter: drop-shadow(4px 4px 12px black);
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
 
   font-size: 40px;
 }
 
-.jewel {
-  background-image: url("../img/jewel.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  filter: drop-shadow(4px 4px 12px black);
-
-  padding: 55px;
+.social {
+  font-size: 36px;
   text-decoration: none;
   color: white;
-  text-shadow: 0px 0px 4px black;
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
   display: inline-block;
-  transition: transform 200ms ease-in-out;
+  padding: 20px;
 }
 
-.jewel .text {
-  filter: drop-shadow(0 0 6px black);
-}
-
-a.jewel {
-  font-size: 24px;
-}
-
-.jewel-2 {
-  background-image: url("../img/jewel-2.png");
-  padding: 60px;
-  padding-right: 65px;
-}
-
-.jewel-3 {
-  background-image: url("../img/jewel-3.png");
-  padding: 60px;
-  padding-bottom: 80px;
-}
-
-.jewel:hover, .jewel:active {
-  transform: scale(1.2) rotateZ(-4deg);
+.social:hover,
+.social:active {
+  text-shadow: 0px 0px 10px white;
+  filter: drop-shadow(4px 4px 12px white);
 }
 
 .eml {
@@ -115,9 +90,15 @@ a.jewel {
 }
 
 .eml a {
-  font-size: 24px;
+  font-size: 36px;
   color: white;
-  text-shadow: 0px 0px 10px black;
-  filter: drop-shadow(4px 4px 12px black);
+  text-shadow: 0px 0px 10px #444;
+  filter: drop-shadow(4px 4px 12px #444);
   text-decoration: none;
+}
+
+.eml a:hover,
+.eml a:active {
+  text-shadow: 0px 0px 10px white;
+  filter: drop-shadow(4px 4px 12px white);
 }
