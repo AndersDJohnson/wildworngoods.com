@@ -6,7 +6,9 @@
   "scripts": {
     "deploy": "gh-pages -d public",
     "dev": "concurrently \"nodemon src\" \"live-server public\"",
-    "optimg": "cd ./public/img/slides/orig; for i in *.jpg; do convert \"$i\" -quality 50 -resize 50% \"../opt/${i}\" ; done",
+    "optimg": "npm run optimgdesktop && npm run optimgmob",
+    "optimgdesktop": "cd ./public/img/slides/orig; rm -rf ../opt/*; for i in *.jpg; do convert \"$i\" -quality 70 \"../opt/${i}\" ; done",
+    "optimgmob": "cd ./public/img/slides/orig; rm -rf ../optmob/*; for i in *.jpg; do convert \"$i\" -quality 70 -resize 50% \"../optmob/${i}\" ; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

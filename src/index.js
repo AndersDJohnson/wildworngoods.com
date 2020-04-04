@@ -5,8 +5,7 @@ const publicDir = __dirname + "/../public";
 
 const slides = fs
   .readdirSync(publicDir + "/img/slides/opt")
-  .reverse()
-  .slice(0, 3);
+    .filter(f => f.endsWith('.jpg'));
 
 const keyframes = makeKeyframes(slides.length);
 
@@ -70,19 +69,29 @@ const html = `
 
   <style>
     ${keyframes}
+    ${slides.map(
+      (slide, i) => `
+      .slide-${i} {
+        animation: slide-${i} ${slides.length * 3}s ease-in-out infinite;
+        
+        content: "OK ${i}";
+      
+        background-image: url('/img/slides/optmob/${slide}');
+      }
+
+      @media (min-width: 768px) {
+        .slide-${i} {
+          background-image: url('/img/slides/opt/${slide}');
+        }
+      }
+    `
+    ).join('\n')}
   </style>
 </head>
 
 <body>
   <div id="bg">
-    ${slides
-      .map(
-        (slide, i) => `<div class="bg-img" style="
-      background-image: url('/img/slides/opt/${slide}');
-      animation: slide-${i} ${slides.length * 3}s ease-in-out infinite;
-    "></div>`
-      )
-      .join("")}
+    ${slides.map((slide, i) => `<div class="slide slide-${i}"></div>`).join("")}
   </div>
 
   <div id="fg">
