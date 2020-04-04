@@ -1,5 +1,6 @@
 {
- "name": "App",
+ "name": "Wild Worn",
+ "theme_color": "#b06c10",
  "icons": [
   {
    "src": "\/img\/android-icon-36x36.png",
