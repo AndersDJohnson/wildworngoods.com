@@ -86,20 +86,3 @@ h2 {
   filter: drop-shadow(4px 4px 12px white);
 }
 
-.eml {
-  margin: 40px 0;
-}
-
-.eml a {
-  font-size: 1.5rem;
-  color: white;
-  text-shadow: 0px 0px 10px #444;
-  filter: drop-shadow(4px 4px 12px #444);
-  text-decoration: none;
-}
-
-.eml a:hover,
-.eml a:active {
-  text-shadow: 0px 0px 10px white;
-  filter: drop-shadow(4px 4px 12px white);
-}
