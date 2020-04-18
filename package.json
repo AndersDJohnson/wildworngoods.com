@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d public",
+    "build": "node src",
     "dev": "concurrently \"nodemon src\" \"live-server public\"",
     "optimg": "npm run optimgdesktop && npm run optimgmob",
     "optimgdesktop": "cd ./public/img/slides/orig; rm -rf ../opt/*; for i in *.jpg; do convert \"$i\" -quality 70 \"../opt/${i}\" ; done",
